@@ -27,6 +27,8 @@
     .download-links { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
     .download-btn { display: inline-block; padding: 8px 18px; background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; text-decoration: none; border-radius: 6px; font-size: 13px; }
     .download-btn:hover { border-color: #4f9eff; color: #4f9eff; }
+    .project-imgs { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .project-imgs img { width: 48%; border-radius: 8px; border: 1px solid #222; min-width: 200px; flex: 1; }
     .about-text { color: #888; font-size: 16px; max-width: 650px; line-height: 1.8; }
     .about-text p { margin-bottom: 16px; }
     .built-by { text-align: center; padding: 60px 40px; border-top: 1px solid #222; color: #555; font-size: 14px; }
@@ -67,8 +69,10 @@
       <span class="tag">Investment Banking</span>
       <span class="tag">JPMorgan Chase</span>
       <div class="download-links">
-        <a href="NBA ADVANCED - Happy Hour Co - DCF model (Matthew).xlsx" download class="download-btn">⬇ Download DCF Model (.xlsx)</a>
-        <a href="Illustrative DCF Happy Hour Co.pptx" download class="download-btn">⬇ Download Slides (.pptx)</a>
+        <a href="NBA ADVANCED - Happy Hour Co - DCF model (Matthew).xlsx" download class="download-btn">⬇ DCF Model (.xlsx)</a>
+        <a href="Illustrative DCF Happy Hour Co.pptx" download class="download-btn">⬇ DCF Slides (.pptx)</a>
+        <a href="Investment reccomendation.pptx" download class="download-btn">⬇ Investment Recommendation (.pptx)</a>
+        <a href="CompanyOverview.pptx" download class="download-btn">⬇ Company Overview (.pptx)</a>
       </div>
     </div>
 
@@ -76,6 +80,10 @@
       <h3>Monte Carlo Option Pricing Simulator</h3>
       <div class="why">Why I built this</div>
       <p>I had a finance background but no idea how options were actually priced under the hood. I wanted to combine what I already knew with coding, so I built this from scratch — simulating 1000 possible stock price futures using Geometric Brownian Motion, pricing European call and put options, and validating the results against the Black-Scholes analytical formula. The two prices come out within cents of each other, which means the simulation works.</p>
+      <div class="project-imgs">
+        <img src="Monte Carlo Option Pricing Simulator.png" alt="Monte Carlo Chart">
+        <img src="Monte Carlo Option Pricing Simulator Code.png" alt="Monte Carlo Code">
+      </div>
       <span class="tag">Python</span>
       <span class="tag">NumPy</span>
       <span class="tag">Matplotlib</span>
