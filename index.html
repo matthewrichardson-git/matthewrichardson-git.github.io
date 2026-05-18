@@ -6,34 +6,37 @@
   <title>Matthew Richardson</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
-    nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
-    nav a { color: #e0e0e0; text-decoration: none; margin-left: 30px; font-size: 15px; }
-    nav a:hover { color: #fff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
+    nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d2d2d7; background: rgba(245,245,247,0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 10; }
+    nav strong { font-size: 17px; color: #1d1d1f; }
+    nav a { color: #424245; text-decoration: none; margin-left: 30px; font-size: 15px; }
+    nav a:hover { color: #0071e3; }
     .hero { padding: 100px 40px; max-width: 800px; }
-    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 16px; }
-    .hero h1 span { color: #4f9eff; }
-    .hero p { font-size: 18px; color: #888; margin-bottom: 32px; max-width: 620px; }
-    .btn { display: inline-block; padding: 12px 28px; background: #4f9eff; color: #fff; text-decoration: none; border-radius: 6px; font-size: 15px; margin-right: 12px; margin-bottom: 12px; }
-    .btn.outline { background: transparent; border: 1px solid #444; color: #e0e0e0; }
+    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 16px; color: #1d1d1f; }
+    .hero h1 span { color: #0071e3; }
+    .hero p { font-size: 18px; color: #6e6e73; margin-bottom: 32px; max-width: 620px; }
+    .btn { display: inline-block; padding: 12px 28px; background: #0071e3; color: #fff; text-decoration: none; border-radius: 980px; font-size: 15px; margin-right: 12px; margin-bottom: 12px; }
+    .btn:hover { background: #0077ed; }
+    .btn.outline { background: transparent; border: 1px solid #d2d2d7; color: #1d1d1f; border-radius: 980px; }
+    .btn.outline:hover { border-color: #0071e3; color: #0071e3; }
     .section { padding: 80px 40px; max-width: 900px; }
-    .section h2 { font-size: 28px; margin-bottom: 12px; color: #fff; }
-    .section .subtitle { color: #555; font-size: 15px; margin-bottom: 40px; }
-    .project-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 28px; margin-bottom: 20px; }
-    .project-card h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
-    .project-card .why { font-size: 13px; color: #4f9eff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .project-card p { color: #888; font-size: 15px; margin-bottom: 16px; }
-    .tag { display: inline-block; background: #1a1a2e; color: #4f9eff; padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-right: 8px; margin-top: 4px; }
+    .section h2 { font-size: 28px; margin-bottom: 12px; color: #1d1d1f; font-weight: 600; }
+    .section .subtitle { color: #6e6e73; font-size: 15px; margin-bottom: 40px; }
+    .project-card { background: #fff; border: 1px solid #d2d2d7; border-radius: 18px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .project-card h3 { font-size: 20px; margin-bottom: 10px; color: #1d1d1f; font-weight: 600; }
+    .project-card .why { font-size: 13px; color: #0071e3; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+    .project-card p { color: #6e6e73; font-size: 15px; margin-bottom: 16px; }
+    .tag { display: inline-block; background: #e8f0fe; color: #0071e3; padding: 4px 12px; border-radius: 980px; font-size: 13px; margin-right: 8px; margin-top: 4px; }
     .download-links { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .download-btn { display: inline-block; padding: 8px 18px; background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; text-decoration: none; border-radius: 6px; font-size: 13px; }
-    .download-btn:hover { border-color: #4f9eff; color: #4f9eff; }
+    .download-btn { display: inline-block; padding: 8px 18px; background: #f5f5f7; border: 1px solid #d2d2d7; color: #1d1d1f; text-decoration: none; border-radius: 980px; font-size: 13px; }
+    .download-btn:hover { border-color: #0071e3; color: #0071e3; }
     .project-imgs { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-    .project-imgs img { width: 48%; border-radius: 8px; border: 1px solid #222; min-width: 200px; flex: 1; }
-    .about-text { color: #888; font-size: 16px; max-width: 650px; line-height: 1.8; }
+    .project-imgs img { width: 48%; border-radius: 12px; border: 1px solid #d2d2d7; min-width: 200px; flex: 1; }
+    .about-text { color: #6e6e73; font-size: 16px; max-width: 650px; line-height: 1.8; }
     .about-text p { margin-bottom: 16px; }
-    .built-by { text-align: center; padding: 60px 40px; border-top: 1px solid #222; color: #555; font-size: 14px; }
-    .built-by span { color: #4f9eff; }
-    footer { padding: 20px 40px; border-top: 1px solid #111; color: #333; font-size: 13px; text-align: center; }
+    .built-by { text-align: center; padding: 60px 40px; border-top: 1px solid #d2d2d7; color: #6e6e73; font-size: 14px; }
+    .built-by span { color: #0071e3; }
+    footer { padding: 20px 40px; border-top: 1px solid #d2d2d7; color: #aaa; font-size: 13px; text-align: center; background: #fff; }
   </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
 
   <div class="hero">
     <h1>Hey, I'm <span>Matthew</span></h1>
-    <p>Recent Finance grad from the University of Tennessee. I don't know exactly which corner of finance I want to end up in yet — so in the meantime I'm putting my phone down and figuring things out by building them.</p>
+    <p>Finance graduate from the University of Tennessee looking to build a long term career in finance. I learn by doing and this site is proof of that.</p>
     <a href="#projects" class="btn">See my projects</a>
     <a href="https://www.linkedin.com/in/mattthewrichardson/" target="_blank" class="btn outline">LinkedIn</a>
   </div>
@@ -79,7 +82,7 @@
     <div class="project-card">
       <h3>Monte Carlo Option Pricing Simulator</h3>
       <div class="why">Why I built this</div>
-      <p>I had a finance background but no idea how options were actually priced under the hood. I wanted to combine what I already knew with coding, so I built this from scratch — simulating 1000 possible stock price futures using Geometric Brownian Motion, pricing European call and put options, and validating the results against the Black-Scholes analytical formula. The two prices come out within cents of each other, which means the simulation works.</p>
+      <p>I had a finance background but no idea how options were actually priced under the hood. I wanted to combine what I already knew with coding, so I built this from scratch. I simulated 1000 possible stock price futures using Geometric Brownian Motion, priced European call and put options, and validated the results against the Black-Scholes analytical formula. The two prices come out within cents of each other, which means the simulation works.</p>
       <div class="project-imgs">
         <img src="Monte Carlo Option Pricing Simulator.png" alt="Monte Carlo Chart">
         <img src="Monte Carlo Option Pricing Simulator Code.png" alt="Monte Carlo Code">
@@ -96,14 +99,13 @@
   <div class="section" id="about">
     <h2>About</h2>
     <div class="about-text">
-      <p>I graduated from the University of Tennessee, Knoxville. Avid golfer, chess addict, and someone who genuinely likes talking to people and learning new things.</p>
-      <p>I'm not sure which avenue of finance I want to go down yet — quant, IB, corporate, something else entirely — so I'm keeping an open mind and staying curious. This site is basically a record of me putting my phone down and challenging myself.</p>
-      <p>If you want to talk, my LinkedIn is always open.</p>
+      <p>I graduated from the University of Tennessee, Knoxville with a degree in Finance. I am drawn to roles where I can keep learning and build real skills over time.</p>
+      <p>Outside of work I am an avid golfer, chess player, and someone who genuinely enjoys talking to people. If you want to connect, my LinkedIn is always open.</p>
     </div>
   </div>
 
   <div class="built-by">
-    <p>This site was <span>built from scratch</span> by me — HTML, CSS, no templates. Hosted on GitHub Pages.</p>
+    <p>This site was <span>built from scratch</span> by me. HTML, CSS, no templates. Hosted on GitHub Pages.</p>
   </div>
 
   <footer>© 2026 Matthew Richardson</footer>
