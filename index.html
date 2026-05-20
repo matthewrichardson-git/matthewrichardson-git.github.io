@@ -7,25 +7,28 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
-    nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d2d2d7; background: rgba(245,245,247,0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 10; }
+    nav { padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d2d2d7; background: rgba(245,245,247,0.92); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 10; }
     nav strong { font-size: 17px; color: #1d1d1f; }
-    nav a { color: #424245; text-decoration: none; margin-left: 30px; font-size: 15px; }
-    nav a:hover { color: #0071e3; }
+    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav-links a { color: #1d1d1f; text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 16px; border: 1px solid #d2d2d7; border-radius: 980px; background: #fff; transition: all 0.15s; }
+    .nav-links a:hover { border-color: #0071e3; color: #0071e3; background: #f0f6ff; }
     .hero { padding: 100px 40px; max-width: 800px; }
     .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 16px; color: #1d1d1f; }
     .hero h1 span { color: #0071e3; }
     .hero p { font-size: 18px; color: #6e6e73; margin-bottom: 32px; max-width: 620px; }
-    .btn { display: inline-block; padding: 12px 28px; background: #0071e3; color: #fff; text-decoration: none; border-radius: 980px; font-size: 15px; margin-right: 12px; margin-bottom: 12px; }
+    .btn { display: inline-block; padding: 12px 28px; background: #0071e3; color: #fff; text-decoration: none; border-radius: 980px; font-size: 15px; margin-right: 12px; margin-bottom: 12px; transition: background 0.15s; }
     .btn:hover { background: #0077ed; }
-    .btn.outline { background: transparent; border: 1px solid #d2d2d7; color: #1d1d1f; border-radius: 980px; }
+    .btn.outline { background: transparent; border: 1px solid #d2d2d7; color: #1d1d1f; }
     .btn.outline:hover { border-color: #0071e3; color: #0071e3; }
     .section { padding: 80px 40px; max-width: 900px; }
     .section h2 { font-size: 28px; margin-bottom: 12px; color: #1d1d1f; font-weight: 600; }
     .section .subtitle { color: #6e6e73; font-size: 15px; margin-bottom: 40px; }
     .project-card { background: #fff; border: 1px solid #d2d2d7; border-radius: 18px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
     .project-card h3 { font-size: 20px; margin-bottom: 10px; color: #1d1d1f; font-weight: 600; }
-    .project-card .why { font-size: 13px; color: #0071e3; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
-    .project-card p { color: #6e6e73; font-size: 15px; margin-bottom: 16px; }
+    .project-card .why { font-size: 13px; color: #0071e3; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+    .project-card .lead { color: #1d1d1f; font-size: 15px; margin-bottom: 12px; font-weight: 500; }
+    .project-card ul { margin: 0 0 16px 0; padding-left: 18px; }
+    .project-card ul li { color: #6e6e73; font-size: 15px; margin-bottom: 5px; }
     .tag { display: inline-block; background: #e8f0fe; color: #0071e3; padding: 4px 12px; border-radius: 980px; font-size: 13px; margin-right: 8px; margin-top: 4px; }
     .download-links { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
     .download-btn { display: inline-block; padding: 8px 18px; background: #f5f5f7; border: 1px solid #d2d2d7; color: #1d1d1f; text-decoration: none; border-radius: 980px; font-size: 13px; }
@@ -34,16 +37,26 @@
     .project-imgs img { width: 48%; border-radius: 12px; border: 1px solid #d2d2d7; min-width: 200px; flex: 1; }
     .about-text { color: #6e6e73; font-size: 16px; max-width: 650px; line-height: 1.8; }
     .about-text p { margin-bottom: 16px; }
+    .connect-box { margin-top: 32px; padding: 28px; background: #fff; border: 1px solid #d2d2d7; border-radius: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .connect-box p { color: #1d1d1f; font-size: 16px; font-weight: 500; margin: 0; }
+    .connect-box span { color: #6e6e73; font-size: 14px; display: block; margin-top: 4px; font-weight: 400; }
     .built-by { text-align: center; padding: 60px 40px; border-top: 1px solid #d2d2d7; color: #6e6e73; font-size: 14px; }
     .built-by span { color: #0071e3; }
     footer { padding: 20px 40px; border-top: 1px solid #d2d2d7; color: #aaa; font-size: 13px; text-align: center; background: #fff; }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 36px; }
+      .section { padding: 60px 20px; }
+      .nav-links a { font-size: 13px; padding: 5px 12px; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <strong>Matthew Richardson</strong>
-    <div>
+    <div class="nav-links">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="https://www.linkedin.com/in/mattthewrichardson/" target="_blank">LinkedIn</a>
@@ -53,7 +66,7 @@
 
   <div class="hero">
     <h1>Hey, I'm <span>Matthew</span></h1>
-    <p>Finance graduate from the University of Tennessee. I build things to understand them, and this site is proof of that.</p>
+    <p>Finance graduate from the University of Tennessee. I build things to understand them.</p>
     <a href="#projects" class="btn">See my projects</a>
     <a href="https://www.linkedin.com/in/mattthewrichardson/" target="_blank" class="btn outline">LinkedIn</a>
   </div>
@@ -67,8 +80,14 @@
         <h3 style="font-size:22px;">Industrial Real Estate Underwriting Tool</h3>
         <a href="https://industrial-underwriting.streamlit.app" target="_blank" class="btn" style="font-size:13px; padding:8px 20px; white-space:nowrap;">Live Demo →</a>
       </div>
-      <div class="why">Why I built this</div>
-      <p>Institutional real estate underwriting requires analytical depth that most candidates only read about. I built a fully functional underwriting platform that covers the complete investment workflow: net operating income modeling, tenant-level lease analysis, rollover risk, capital expenditure planning, LP/GP waterfall distributions, and multi-scenario stress testing. This is not a class project. It is production-level work.</p>
+      <div class="why">The work</div>
+      <p class="lead">Most candidates learn this on the job. This was built before the first interview.</p>
+      <ul>
+        <li>Modeled the full investment workflow: NOI build, debt sizing, IRR, and exit valuation</li>
+        <li>Built tenant-level lease analysis with rollover risk, downtime modeling, and mark-to-market</li>
+        <li>Implemented LP/GP waterfall distributions with configurable promote tiers and preferred return</li>
+        <li>Added multi-scenario stress testing (bear, base, bull) and a formatted Excel export</li>
+      </ul>
       <span class="tag">Python</span>
       <span class="tag">Streamlit</span>
       <span class="tag">Industrial Real Estate</span>
@@ -80,8 +99,13 @@
 
     <div class="project-card">
       <h3>Smart Portfolio Optimizer</h3>
-      <div class="why">Why I built this</div>
-      <p>Risk adjusted returns are central to portfolio management. Rather than accept a surface level understanding, I built a simulator that constructs 10,000 random portfolios across five stocks and maps the Efficient Frontier. The optimal portfolios are marked directly on the chart. I built this to prove I understand the concept, not just that I heard of it.</p>
+      <div class="why">The work</div>
+      <p class="lead">Mean-variance optimization shows up in every finance interview. This is what it looks like when you actually build it.</p>
+      <ul>
+        <li>Generated 10,000 random portfolios across five stocks using Monte Carlo simulation</li>
+        <li>Mapped the Efficient Frontier and marked the optimal risk/return portfolios</li>
+        <li>Implemented the full mean-variance optimization framework from scratch</li>
+      </ul>
       <div class="project-imgs">
         <img src="Efficient Frontier.png" alt="Efficient Frontier Chart">
         <img src="Efficient Frontier Code .png" alt="Efficient Frontier Code">
@@ -95,8 +119,13 @@
 
     <div class="project-card">
       <h3>Investment Banking Job Simulation</h3>
-      <div class="why">Why I did this</div>
-      <p>To develop real exposure to investment banking work, I completed a full deal simulation. I identified an M&A target using strategic and financial criteria, built a DCF model to value the business, and stress-tested it against a competitor bid and a supply chain disruption. The engagement concluded with client-ready deliverables: a company overview and a formal investment recommendation.</p>
+      <div class="why">The work</div>
+      <p class="lead">Target screening. DCF valuation. Stress testing. Client deliverables. The full process, not a summary of it.</p>
+      <ul>
+        <li>Identified an M&A target using strategic and financial screening criteria</li>
+        <li>Built a full DCF model and stress-tested it against a competitor bid and supply chain disruption</li>
+        <li>Produced client-ready deliverables: a company overview and a formal investment recommendation</li>
+      </ul>
       <span class="tag">DCF Modeling</span>
       <span class="tag">M&A</span>
       <span class="tag">Valuation</span>
@@ -111,8 +140,13 @@
 
     <div class="project-card">
       <h3>Monte Carlo Option Pricing Simulator</h3>
-      <div class="why">Why I built this</div>
-      <p>Understanding Black-Scholes and Monte Carlo conceptually is not the same as understanding them mechanically. I built a simulator from scratch that runs 1,000 possible price paths for a stock and derives the option value from those outcomes. The result was benchmarked against the closed form analytical solution. They matched. Building it was the fastest way to actually understand it.</p>
+      <div class="why">The work</div>
+      <p class="lead">Black-Scholes is the textbook answer. This is what happens when you derive the same result from first principles.</p>
+      <ul>
+        <li>Coded a simulator from scratch that runs 1,000 possible price paths for an underlying asset</li>
+        <li>Derived the option value from simulated outcomes and benchmarked against the closed form solution</li>
+        <li>The two matched, validating both the implementation and the underlying theory</li>
+      </ul>
       <div class="project-imgs">
         <img src="Monte Carlo Option Pricing Simulator.png" alt="Monte Carlo Chart">
         <img src="Monte Carlo Option Pricing Simulator Code.png" alt="Monte Carlo Code">
@@ -130,12 +164,19 @@
     <h2>About</h2>
     <div class="about-text">
       <p>I hold a Finance degree from the University of Tennessee, Knoxville. I am drawn to roles where analytical rigor is expected and rewarded.</p>
-      <p>Outside of work I compete at golf, play chess, and make a point of talking to as many people as possible. My LinkedIn is always open.</p>
+      <p>Outside of work I compete at golf, play chess, and make a point of talking to as many people as possible.</p>
+    </div>
+    <div class="connect-box">
+      <div>
+        <p>Let's connect</p>
+        <span>Open to opportunities in asset management, investment banking, and finance.</span>
+      </div>
+      <a href="https://www.linkedin.com/in/mattthewrichardson/" target="_blank" class="btn" style="margin:0;">LinkedIn →</a>
     </div>
   </div>
 
   <div class="built-by">
-This site was <span>built from scratch.</span> HTML and CSS, no templates.
+    <p>This site was <span>built from scratch.</span> HTML and CSS, no templates.</p>
   </div>
 
   <footer>© 2026 Matthew Richardson</footer>
